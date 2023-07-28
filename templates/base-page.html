@@ -140,16 +140,8 @@
                             <div class="middle-menu pull-right">
                                 <nav>
                                     <ul class="middle-menu-list">
-                                        <li><a href="index.html">home<i class="fa fa-angle-down"></i></a>
-                                            <!-- Home Version Dropdown Start -->
-                                            <ul class="ht-dropdown home-dropdown">
-                                                <li><a href="index.html">Home Version One</a></li>
-                                                <li><a href="index-2.html">Home Version Two</a></li>
-                                                <li><a href="index-3.html">Home Box Layout</a></li>
-                                            </ul>
-                                            <!-- Home Version Dropdown End -->
-                                        </li>
-                                        <li><a href="about.html">about us</a></li>
+                                        <li><a href="/">home</a></li>
+                                        <li><a href="{% url 'about' %}">about us</a></li>
                                         <li><a href="shop.html">shop<i class="fa fa-angle-down"></i></a>
                                             <!-- Home Version Dropdown Start -->
                                             <ul class="ht-dropdown dropdown-style-two">
@@ -324,11 +316,11 @@
             <!-- Header Bottom End -->
         </header>
         <!-- Header Area End -->
-        <!-- head --> =============
+        <!-- head -->
 {% block container %}
 
 {% endblock container %}
-<!-- FOOT -->==========
+<!-- FOOT -->
         <footer class="off-white-bg">
             <!-- Footer Top Start -->
             <div class="footer-top pt-50 pb-60">
