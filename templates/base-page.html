@@ -97,24 +97,7 @@
                         <div class="col-lg-4 col-md-12">
                             <div class="header-top-right">
                                 <ul class="header-list-menu f-right">
-                                    <!-- Language Start -->
-                                    <li><a href="#">Language: English <i class="fa fa-angle-down"></i></a>
-                                        <ul class="ht-dropdown">
-                                            <li><a href="#">Spanish</a></li>
-                                            <li><a href="#">Bengali</a></li>
-                                            <li><a href="#">Russian</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- Language End -->
-                                    <!-- Currency Start -->
-                                    <li><a href="#">Currency:  USD <i class="fa fa-angle-down"></i></a>
-                                        <ul class="ht-dropdown">
-                                            <li><a href="#">USD</a></li>
-                                            <li><a href="#">GBP</a></li>
-                                            <li><a href="#">EUR</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- Currency End -->
+
                                 </ul>
                                 <!-- Header-list-menu End -->
                             </div>
@@ -176,17 +159,23 @@
                                             </ul>
                                             <!-- Home Version Dropdown End -->
                                         </li>
-                                        <li><a href="#">pages<i class="fa fa-angle-down"></i></a>
+                                        {% if user.is_authenticated %}
+                                                {{ user.username }}
+                                            {% else %}
+                                        <li><a href="#">Login/Register<i class="fa fa-angle-down"></i></a>
                                             <!-- Home Version Dropdown Start -->
+
                                             <ul class="ht-dropdown dropdown-style-two">
-                                                <li><a href="login.html">Login Page</a></li>
-                                                <li><a href="register.html">Register Page</a></li>
+                                                <li><a href="{% url 'login' %}">Login Page</a></li>
+                                                <li><a href="{% url 'register' %}">Register Page</a></li>
                                                 <li><a href="404.html">404 Page</a></li>
                                                 <li><a href="forgot-password.html">Forgot Password Page</a></li>
                                                 <li><a href="account.html">Account Page</a></li>
+                                                <li><a href="{% url 'logout' %}">LogOut</a></li>
                                             </ul>
                                             <!-- Home Version Dropdown End -->
                                         </li>
+                                        {% endif %}
                                         <li><a href="contact.html">contact us</a></li>
                                     </ul>
                                 </nav>
@@ -199,9 +188,10 @@
                                 <ul>
                                     <li><a href="compare.html"><i class="fa fa-cog"></i></a>
                                         <ul class="ht-dropdown">
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="register.html">Register</a></li>
+                                            <li><a href="{% url 'login' %}">Login</a></li>
+                                            <li><a href="{% url 'register' %}">Register</a></li>
                                             <li><a href="account.html">Account</a></li>
+                                            <li><a href="{% url 'logout' %}">LogOut</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -295,9 +285,10 @@
                                         <li><a href="#">pages</a>
                                             <!-- Mobile Menu Dropdown Start -->
                                             <ul>
-                                                <li><a href="login.html">login Page</a></li>
-                                                <li><a href="register.html">Register Page</a></li>
+                                                <li><a href="{% url 'login' %}">login Page</a></li>
+                                                <li><a href="{% url 'register' %}">Register Page</a></li>
                                                 <li><a href="404.html">404 Page</a></li>
+                                                <li><a href="{% url 'logout' %}">LogOut</a></li>
                                             </ul>
                                             <!-- Mobile Menu Dropdown End -->
                                         </li>
