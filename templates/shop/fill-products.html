@@ -1,0 +1,94 @@
+{% extends 'base-page.html' %}
+{% load static %}
+
+
+{% block title %}
+   Fill Products
+{% endblock title %}
+
+{% block container %}
+
+        <div class="breadcrumb-area ptb-60 ptb-sm-30">
+            <div class="container">
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="shop.html">Shop</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Breadcrumb End -->
+        <!-- Shop Page Start -->
+        <div class="main-shop-page pb-60">
+            <div class="container">
+                <!-- Row End -->
+                <div class="row">
+                    <form method="post" action="{% url 'fill_database' %}">
+                        {% csrf_token %}
+                        <button class="learn-more-btn" name="fill_database" type="submit" onclick="runSpinner()">
+                            <span class="spinner spinner-bolder spinner-bolder-sm" role="status" id="spinner"
+                                  style="visiblity:hidden" aria-hidden="true"></span>
+                            run scraping for full database
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Shop Page End -->
+        <!-- Brand Logo Start -->
+        <div class="brand-area pb-60">
+            <div class="container">
+                <!-- Brand Banner Start -->
+                <div class="brand-banner owl-carousel">
+                    <div class="single-brand">
+                        <a href="#"><img class="img" src="img/brand/1.png" alt="brand-image"></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/2.png" alt="brand-image"></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/3.png" alt="brand-image"></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/4.png" alt="brand-image"></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/5.png" alt="brand-image"></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><img class="img" src="img/brand/1.png" alt="brand-image"></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/2.png" alt="brand-image"></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/3.png" alt="brand-image"></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/4.png" alt="brand-image"></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/5.png" alt="brand-image"></a>
+                    </div>
+                </div>
+                <!-- Brand Banner End -->                
+            </div>
+        </div>
+        <!-- Brand Logo End -->
+
+{% if message %}
+    <div class="container">
+        <div class="row">
+            <div class="main-heanding-block">
+                <h2>Errors of scrapping: <br><br>
+                    <span style="color:red"> {{message}} </span>
+                </h2>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+{% endblock container %}
